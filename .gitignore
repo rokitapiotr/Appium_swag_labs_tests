@@ -1,0 +1,14 @@
+*.log
+*.cache
+
+/cache/
+/temp/
+
+__pycache__/
+*.pyc
+
+pytest_cache/
+
+geckodriver.log
+
+.idea/
