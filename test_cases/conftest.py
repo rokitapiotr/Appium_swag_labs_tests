@@ -6,7 +6,7 @@ from allure_commons.types import AttachmentType
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 
-APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\AppiumLinkedIn\\apk\\linkedin.apk'
+APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\AppiumLinkedINTests\\apk\\SauceApp.apk'
 
 
 #APP_PATH = lambda p: os.path.abspath(
@@ -30,20 +30,20 @@ def driver(request):
         deviceName='Android',
         app=APP_PATH,
         automationName='UiAutomator2',
-        # appPackage='com.linkedin.android',
-        # appActivity='com.linkedin.android.infra.navigation.LaunchActivity',
+        # appPackage='com.swaglabsmobileapp',
+        # appActivity='com.swaglabsmobileapp.MainActivity',
         noReset=True,
-        fullreset=True,
-        # autoLaunch=True,
+        #fullreset=True,
+        #autoLaunch=True,
         newCommandTimeout=500
     )
 
     capabilities_options = UiAutomator2Options().load_capabilities(desired_caps)
-    driver = webdriver.Remote('http://127.0.0.1:4724', options=capabilities_options)
+    driver = webdriver.Remote('http://127.0.0.1:4723', options=capabilities_options)
     driver.implicitly_wait(10)
     yield driver
     print('The driver has been set up')
-    # driver.quit()
+    #driver.quit()
     remove_app(driver)
 
 
