@@ -9,8 +9,7 @@ class UserInteractions(BasePage):
         super().__init__(driver)
 
     def login(self, login, password):
-        self.click(LoginPageLocators.sign_in_button)
-        self.type(LoginPageLocators.email_input, login)
+        self.type(LoginPageLocators.username_input, login)
         self.type(LoginPageLocators.password_input, password)
-        self.click(LoginPageLocators.continue_button)
+        self.click(LoginPageLocators.login_button)
 
