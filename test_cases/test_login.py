@@ -4,7 +4,7 @@ from file_utils.data_utils import get_CSV_data_as_dict
 from lib.user_interactions import UserInteractions
 from conftest import driver
 
-filename = 'login_data.csv'
+filename = 'valid_login_data.csv'
 test_data_username_password = get_CSV_data_as_dict(filename)
 
 

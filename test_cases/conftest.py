@@ -18,21 +18,21 @@ def driver(request):
         deviceName='Android',
         app=APP_PATH,
         automationName='UiAutomator2',
-        # appPackage='com.swaglabsmobileapp',
-        # appActivity='com.swaglabsmobileapp.MainActivity',
+        appPackage='com.swaglabsmobileapp',
+        appActivity='com.swaglabsmobileapp.MainActivity',
         noReset=True,
-        # fullreset=True,
-        # autoLaunch=True,
         newCommandTimeout=500
     )
 
     capabilities_options = UiAutomator2Options().load_capabilities(desired_caps)
     driver = webdriver.Remote('http://127.0.0.1:4723', options=capabilities_options)
     driver.implicitly_wait(5)
+    #driver.background_app(5)
+
     yield driver
     print('The driver has been set up')
+    driver.remove_app('com.swaglabsmobileapp')
     driver.quit()
-
 
 
 @pytest.fixture()
