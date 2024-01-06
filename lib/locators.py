@@ -21,4 +21,11 @@ class MainPageLocators:
     main_page_header = (By.XPATH, '//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView[2]')
     expand_button = (By.XPATH, '//android.view.ViewGroup[@content-desc="test-Menu"]/android.view.ViewGroup/android.widget.ImageView')
     logout_button = (By.XPATH, '//android.widget.TextView[@text="LOGOUT"]')
+    first_item = (By.XPATH, '(//android.view.ViewGroup[@content-desc="test-ADD TO CART"])[1]')
+    second_item = (By.XPATH, '(//android.view.ViewGroup[@content-desc="test-ADD TO CART"])[2]')
+    third_item = (By.XPATH, '(//android.view.ViewGroup[@content-desc="test-ADD TO CART"])[3]')
+    forth_item = (By.XPATH, '(//android.view.ViewGroup[@content-desc="test-ADD TO CART"])[4]')
+    fifth_item = (By.XPATH, '(//android.view.ViewGroup[@content-desc="test-ADD TO CART"])[5]')
+    sixth_item = (By.XPATH, '(//android.view.ViewGroup[@content-desc="test-ADD TO CART"])[6]')
+    cart_counter = (By.XPATH, '//android.widget.TextView[@text="1"]')
 

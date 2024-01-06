@@ -2,7 +2,7 @@ from appium.options.android import UiAutomator2Options
 from appium import webdriver
 
 
-APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\AppiumLinkedINTests\\apk\\SauceApp.apk'
+APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\Appium_swag_labs_tests\\apk\\SauceApp.apk'
 
 desired_caps = dict(
     platformName='Android',

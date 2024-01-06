@@ -31,3 +31,7 @@ class MainPage(BasePage):
     @property
     def get_window_header_text_empty_password(self) -> str:
         return self.get_text(LoginPageLocators.empty_password_window)
+
+    @property
+    def cart_counter(self)-> str:
+        return self.get_text(MainPageLocators.cart_counter)
