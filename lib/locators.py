@@ -7,6 +7,10 @@ class LoginPageLocators:
     username_input = (AppiumBy.ACCESSIBILITY_ID, 'test-Username')
     password_input = (AppiumBy.ACCESSIBILITY_ID, 'test-Password')
     login_button = (AppiumBy.ACCESSIBILITY_ID, 'test-LOGIN')
+    locked_user_window = (By.XPATH, '//android.widget.TextView[@text="Sorry, this user has been locked out."]')
+    invalid_user_window = (By.XPATH, '//android.widget.TextView[@text="Username and password do not match any user in this service."]')
+    empty_username_window = (By.XPATH, '//android.widget.TextView[@text="Username is required"]')
+    empty_password_window = (By.XPATH, '//android.widget.TextView[@text="Password is required"]')
 
 
 class MainPageLocators:

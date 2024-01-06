@@ -27,7 +27,6 @@ def driver(request):
     capabilities_options = UiAutomator2Options().load_capabilities(desired_caps)
     driver = webdriver.Remote('http://127.0.0.1:4723', options=capabilities_options)
     driver.implicitly_wait(5)
-    #driver.background_app(5)
 
     yield driver
     print('The driver has been set up')
