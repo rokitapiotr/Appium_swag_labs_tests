@@ -13,6 +13,10 @@ class MainPage(BasePage):
         return self.is_displayed(MainPageLocators.main_page_header)
 
     @property
+    def is_header_swag_labs_displayed(self) -> bool:
+        return self.is_displayed(LoginPageLocators.header_swag_labs)
+
+    @property
     def locked_user_window_has_been_displayed(self) -> bool:
         return self.is_displayed(LoginPageLocators.locked_user_window)
 

@@ -4,7 +4,7 @@ from allure_commons.types import AttachmentType
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 
-APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\AppiumLinkedINTests\\apk\\SauceApp.apk'
+APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\Appium_swag_labs_tests\\apk\\SauceApp.apk'
 
 
 # APP_PATH = lambda p: os.path.abspath(
@@ -26,8 +26,7 @@ def driver(request):
 
     capabilities_options = UiAutomator2Options().load_capabilities(desired_caps)
     driver = webdriver.Remote('http://127.0.0.1:4723', options=capabilities_options)
-    driver.implicitly_wait(5)
-
+    driver.implicitly_wait(10)
     yield driver
     print('The driver has been set up')
     driver.remove_app('com.swaglabsmobileapp')

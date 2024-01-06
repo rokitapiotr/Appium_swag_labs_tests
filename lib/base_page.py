@@ -1,3 +1,4 @@
+from appium.webdriver.common.touch_action import TouchAction
 from selenium.common import NoSuchElementException
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
@@ -25,6 +26,11 @@ class BasePage:
     def click(self, locator: tuple, time: int = 25):
         self.wait_until_element_is_visible(locator, time)
         self.find(locator).click()
+
+    def tap(self, coordinates: tuple):
+        x, y = coordinates
+        touch_action = TouchAction(self.driver)
+        touch_action.tap(x=x, y=y).perform()
 
     def wait_until_element_is_visible(self, locator: tuple, time: int = 25):
         wait = WebDriverWait(self.driver, time)
