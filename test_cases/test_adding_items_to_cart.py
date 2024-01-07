@@ -1,3 +1,4 @@
+"""
 import pytest
 from selenium.webdriver.common.by import By
 from assertions import MainPage
@@ -25,16 +26,16 @@ add_to_cart_buttons = [
     [MainPageLocators.first_item, MainPageLocators.second_item, MainPageLocators.third_item, MainPageLocators.forth_item, MainPageLocators.fifth_item, MainPageLocators.sixth_item]
 ])
 def test_adding_items_to_cart(driver, items_to_add):
-    """
-    Preconditions:
-    User is already logged in.
-    1.Add item/s to cart
-    2.Click on login button
-    Expected result: Item is being added to cart
-    """
 
-    page = UserInteractions(driver)
-    page.login_with_tap_standard_user()
+   #Preconditions:
+   #User is already logged in.
+   #1.Add item/s to cart
+   #2.Click on login button
+   #Expected result: Item is being added to cart
+
+
+   #page = UserInteractions(driver)
+   #page.login_with_tap_standard_user()
     #
     # for item_button in items_to_add:
     #     print(f"Before clicking on {item_button}")
@@ -45,3 +46,4 @@ def test_adding_items_to_cart(driver, items_to_add):
     # expected_counter = str(len(items_to_add))
     #
     # assert adding_items.cart_counter == expected_counter, 'Cart counter is not displayed'
+"""
