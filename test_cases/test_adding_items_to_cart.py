@@ -27,15 +27,15 @@ add_to_cart_buttons = [
 ])
 def test_adding_items_to_cart(driver, items_to_add):
 
-   #Preconditions:
-   #User is already logged in.
-   #1.Add item/s to cart
-   #2.Click on login button
-   #Expected result: Item is being added to cart
+   # Preconditions:
+   # User is already logged in.
+   # 1.Add item/s to cart
+   # 2.Click on login button
+   # Expected result: Item is being added to cart
 
 
-   #page = UserInteractions(driver)
-   #page.login_with_tap_standard_user()
+   # page = UserInteractions(driver)
+   # page.login_with_tap_standard_user()
     #
     # for item_button in items_to_add:
     #     print(f"Before clicking on {item_button}")
