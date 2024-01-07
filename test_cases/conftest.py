@@ -26,12 +26,13 @@ def driver(request):
 
     capabilities_options = UiAutomator2Options().load_capabilities(desired_caps)
     driver = webdriver.Remote('http://127.0.0.1:4723', options=capabilities_options)
+    print('The driver has been set up')
     driver.implicitly_wait(10)
     yield driver
-    print('The driver has been set up')
     driver.remove_app('com.swaglabsmobileapp')
     print('The driver has been removed')
     driver.quit()
+    print('The driver has been stopped')
 
 
 @pytest.fixture()
