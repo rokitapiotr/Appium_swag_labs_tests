@@ -1,15 +1,15 @@
+import os
 import allure
 import pytest
 from allure_commons.types import AttachmentType
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 
-APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\Appium_swag_labs_tests\\apk\\SauceApp.apk'
+#APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\Appium_swag_labs_tests\\apk\\SauceApp.apk'
 
+project_directory = os.path.dirname(os.path.abspath(__file__))
+APP_PATH = os.path.join(project_directory, 'apk', 'Sauce_app.apk')
 
-# APP_PATH = lambda p: os.path.abspath(
-# os.path.join(os.path.dirname(__file__), p)
-# )
 
 @pytest.fixture(scope="function")
 def driver(request):
