@@ -30,6 +30,7 @@ def driver(request):
     yield driver
     print('The driver has been set up')
     driver.remove_app('com.swaglabsmobileapp')
+    print('The driver has been removed')
     driver.quit()
 
 

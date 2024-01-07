@@ -103,3 +103,10 @@ class BasePage:
     def swipe_right(self, swipes):
         for _ in range(1, swipes + 1):
             self.swipe(200, 600, 900, 600, 1000)
+
+    def get_dimensions(self, locator, time=25):
+        self.wait_until_element_is_visible(locator, time)
+        element = self.find(locator)
+        width = element.size['width']
+        height = element.size['height']
+        return width, height
