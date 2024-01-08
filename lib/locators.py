@@ -26,7 +26,5 @@ class MainPageLocators:
     second_item = (By.XPATH, '(//android.widget.TextView[@text="ADD TO CART"])[2]')
     third_item = (By.XPATH, '(//android.widget.TextView[@text="ADD TO CART"])[3]')
     forth_item = (By.XPATH, '(//android.widget.TextView[@text="ADD TO CART"])[4]')
-    fifth_item = (By.XPATH, '(//android.widget.TextView[@text="ADD TO CART"])[5]')
-    sixth_item = (By.XPATH, '(//android.widget.TextView[@text="ADD TO CART"])[6]')
     cart_counter = (By.XPATH, '//android.widget.TextView[@text="1"]')
 

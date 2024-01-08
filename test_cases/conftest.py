@@ -1,7 +1,4 @@
-import os
-import allure
 import pytest
-from allure_commons.types import AttachmentType
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 
@@ -36,20 +33,3 @@ def driver(request):
     driver.quit()
     print('The driver has been stopped')
 
-
-@pytest.fixture()
-def log_on_failure(request, driver):
-    yield
-    item = request.node
-    if item.rep_call.failed:
-        driver_failure = driver
-        allure.attach(driver_failure.get_screenshot_as_png(), name="screenshot", attachment_type=AttachmentType.PNG)
-
-
-@pytest.hookimpl(hookwrapper=True, tryfirst=True)
-def pytest_runtest_makereport(item, call):
-    outcome = yield
-    rep = outcome.get_result()
-
-    setattr(item, f"rep_{rep.when}", rep)
-    return rep

@@ -1,3 +1,4 @@
+import random
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.common import NoSuchElementException
 from selenium.webdriver.remote.webdriver import WebDriver
@@ -78,31 +79,6 @@ class BasePage:
 
         handles = self.driver.window_handles
         self.driver.switch_to.window(handles[index])
-
-    @staticmethod
-    def scroll_to_text_by_android_UI_automator(self, text):
-        self.driver.find_element_by_android_uiautomator("new UiScrollable(new UiSelector().scrollable(true).instance("
-                                                        "0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\").instance(0))").click()
-
-    @staticmethod
-    def swipe_up(self, swipes):
-        for _ in range(1, swipes + 1):
-            self.swipe(514, 600, 514, 200, 1000)
-
-    @staticmethod
-    def swipe_down(self, swipes):
-        for _ in range(1, swipes + 1):
-            self.swipe(514, 500, 514, 800, 1000)
-
-    @staticmethod
-    def swipe_left(self, swipes):
-        for _ in range(1, swipes + 1):
-            self.swipe(900, 600, 200, 600, 1000)
-
-    @staticmethod
-    def swipe_right(self, swipes):
-        for _ in range(1, swipes + 1):
-            self.swipe(200, 600, 900, 600, 1000)
 
     def get_dimensions(self, locator, time=25):
         self.wait_until_element_is_visible(locator, time)
