@@ -5,32 +5,34 @@ from allure_commons.types import AttachmentType
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 
-#APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\Appium_swag_labs_tests\\apk\\SauceApp.apk'
-
-project_directory = os.path.dirname(os.path.abspath(__file__))
-APP_PATH = os.path.join(project_directory, 'apk', 'Sauce_app.apk')
+APP_PATH = 'C:\\Users\\rokit\\PycharmProjects\\Appium_swag_labs_tests\\apk\\SauceApp.apk'
 
 
 @pytest.fixture(scope="function")
 def driver(request):
+
     desired_caps = dict(
         platformName='Android',
         deviceName='Android',
         app=APP_PATH,
         automationName='UiAutomator2',
-        appPackage='com.swaglabsmobileapp',
-        appActivity='com.swaglabsmobileapp.MainActivity',
+        # appPackage='com.swaglabsmobileapp',
+        # appActivity='com.swaglabsmobileapp.MainActivity',
         noReset=True,
+        fullReset=False,
         newCommandTimeout=500
     )
 
     capabilities_options = UiAutomator2Options().load_capabilities(desired_caps)
     driver = webdriver.Remote('http://127.0.0.1:4723', options=capabilities_options)
     print('The driver has been set up')
+
     driver.implicitly_wait(10)
     yield driver
+
     driver.remove_app('com.swaglabsmobileapp')
-    print('The driver has been removed')
+    print('The app has been removed')
+
     driver.quit()
     print('The driver has been stopped')
 
@@ -42,11 +44,10 @@ def log_on_failure(request, driver):
     if item.rep_call.failed:
         driver_failure = driver
         allure.attach(driver_failure.get_screenshot_as_png(), name="screenshot", attachment_type=AttachmentType.PNG)
-        
+
 
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
 def pytest_runtest_makereport(item, call):
-
     outcome = yield
     rep = outcome.get_result()
 

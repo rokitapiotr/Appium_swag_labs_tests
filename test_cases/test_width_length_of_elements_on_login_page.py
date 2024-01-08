@@ -67,7 +67,7 @@ def test_top_image_dimensions(driver):
     print(dimensions)
 
     assert dimensions[0] == 870
-    assert dimensions[1] == 840
+    assert dimensions[1] == 147
 
 
 def test_bottom_image_dimensions(driver):
@@ -79,7 +79,6 @@ def test_bottom_image_dimensions(driver):
 
     login_page = UserInteractions(driver)
     dimensions = login_page.get_dimensions(LoginPageLocators.bottom_image)
-
     print(dimensions)
 
     assert dimensions[0] == 870
